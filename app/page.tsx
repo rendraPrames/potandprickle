@@ -4,24 +4,31 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
+
 const products = [
 {
-name: "Kaktus Mini",
-description: "Cocok untuk meja kerja dan ruangan minimalis.",
-price: "Mulai Rp25.000",
+name: "Desk Buddy 🌵",
+description:
+"Teman meja kerja yang tetap hidup bahkan saat Anda sibuk.",
+price: "25K",
 image: "/product-1.jpeg",
+badge: "Best Seller",
 },
 {
-name: "Sukulen Mini",
-description: "Mudah dirawat dan cocok untuk pemula.",
-price: "Mulai Rp30.000",
+name: "Mini Succulent Gift 🌿",
+description:
+"Hadiah kecil yang cocok untuk teman, pasangan, maupun rekan kerja.",
+price: "30K",
 image: "/product-2.jpeg",
+badge: "Favorit",
 },
 {
-name: "Paket Kado Wisuda",
-description: "Hadiah unik dengan kartu ucapan personal.",
-price: "Mulai Rp75.000",
+name: "Graduation Gift 🎓",
+description:
+"Paket wisuda lengkap dengan kartu ucapan personal.",
+price: "75K",
 image: "/product-3.jpeg",
+badge: "Custom Card",
 },
 ];
 
@@ -62,24 +69,18 @@ return (
 
   {/* Hero */}
   <section className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-20">
-  
+
     <div className="grid md:grid-cols-2 gap-10 items-center">
 
       <div className="order-1 md:order-2">
-	<Image
-	  src="/hero-cactus.jpg"
-	  alt="PotAndPrickle"
-	  width={1000}
-	  height={700}
-	  className="
+        <Image src="/hero-cactus.jpg" alt="PotAndPrickle" width={1000} height={700} className="
 	    w-full
 	    h-[320px]
 	    md:h-auto
 	    object-cover
 	    rounded-3xl
 	    shadow-xl
-	  "
-	/>
+	  " />
       </div>
 
       <div className="order-2 md:order-1">
@@ -111,22 +112,22 @@ return (
           </a>
 
         </div>
-        
-            <div className="flex flex-wrap gap-3 mt-6">
 
-	      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
-		🎁 Custom Card Gratis
-	      </span>
+        <div className="flex flex-wrap gap-3 mt-6">
 
-	      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
-		🌵 Mudah Dirawat
-	      </span>
+          <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
+            🎁 Custom Card Gratis
+          </span>
 
-	      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
-		📦 Packing Aman
-	      </span>
+          <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
+            🌵 Mudah Dirawat
+          </span>
 
-	    </div>
+          <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
+            📦 Packing Aman
+          </span>
+
+        </div>
 
       </div>
 
@@ -327,121 +328,165 @@ return (
 
 
 	{/* Produk */}
-	<section
-	  id="koleksi"
-	  className="max-w-6xl mx-auto px-4 md:px-6 pt-16 md:pt-20 pb-24 md:pb-32"
-	>
-	  <h2 className="text-3xl md:text-4xl font-bold text-center">
-	    Koleksi Unggulan
-	  </h2>
+<section
+  id="koleksi"
+  className="max-w-6xl mx-auto px-4 md:px-6 py-24"
+>
 
-	  <p className="text-center text-gray-600 mt-3 mb-12">
-	    Produk favorit pelanggan PotAndPrickle
-	  </p>
+  <div className="text-center mb-14">
 
+    <span
+      className="
+        bg-green-100
+        text-green-700
+        px-4
+        py-2
+        rounded-full
+        text-sm
+      "
+    >
+      🌵 Koleksi Pilihan
+    </span>
 
-	  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <h2 className="text-4xl md:text-5xl font-bold mt-5">
+      Temukan Hadiah yang Tepat
+    </h2>
 
-	    {products.map((product) => (
+    <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+      Setiap tanaman dipilih agar mudah dirawat dan cocok
+      menjadi hadiah yang berkesan untuk orang tersayang.
+    </p>
 
-	      <div
-		key={product.name}
-		className="
-		  bg-white 
-		  rounded-2xl 
-		  p-6 
-		  shadow-sm 
-		  hover:shadow-lg 
-		  transition 
-		  flex 
-		  flex-col
-		  h-full
-		"
-	      >
+  </div>
 
-		{/* Image */}
-		<div className="relative h-56 w-full mb-5 overflow-hidden rounded-xl">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-		  <Image
-		    src={product.image}
-		    alt={product.name}
-		    fill
-		    sizes="
-		      (max-width: 640px) 100vw,
-		      (max-width: 1024px) 50vw,
-		      33vw
-		    "
-		    className="
-		      object-cover 
-		      hover:scale-105 
-		      transition 
-		      duration-300
-		    "
-		  />
+    {products.map((product) => (
 
-		</div>
+      <div
+        key={product.name}
+        className="
+          bg-white
+          rounded-3xl
+          overflow-hidden
+          shadow-sm
+          hover:shadow-xl
+          transition-all
+          duration-300
+          hover:-translate-y-1
+        "
+      >
 
+        {/* Image */}
+        <div className="relative h-64 overflow-hidden">
 
-		{/* Content */}
-		<div className="flex flex-col flex-1">
+          <div className="absolute top-4 left-4 z-10">
 
-		  <h3 className="text-xl font-semibold">
-		    {product.name}
-		  </h3>
+            <span
+              className="
+                bg-white
+                px-3
+                py-1
+                rounded-full
+                text-xs
+                font-medium
+                shadow
+              "
+            >
+              {product.badge}
+            </span>
 
+          </div>
 
-		  <p className="
-		    text-gray-600 
-		    mt-3
-		    min-h-[48px]
-		    leading-relaxed
-		  ">
-		    {product.description}
-		  </p>
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            sizes="
+              (max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw
+            "
+            className="
+              object-cover
+              transition-transform
+              duration-500
+              hover:scale-110
+            "
+          />
 
+        </div>
 
-		  {/* Price */}
-		  <p className="
-		    font-bold 
-		    text-lg 
-		    mt-auto
-		    pt-6
-		  ">
-		    {product.price}
-		  </p>
+        {/* Content */}
+        <div className="p-6 flex flex-col h-full">
 
+          <h3 className="text-2xl font-bold">
+            {product.name}
+          </h3>
 
-		  {/* Button */}
-		  <a
-		    href={whatsapp}
-		    target="_blank"
-		    rel="noopener noreferrer"
-		    className="
-		      block
-		      text-center
-		      w-full
-		      mt-6
-		      bg-[#6F8F72]
-		      text-white
-		      py-3
-		      rounded-xl
-		      hover:opacity-90
-		      transition
-		    "
-		  >
-		    Pesan Sekarang
-		  </a>
+          <p className="text-gray-600 mt-3 leading-relaxed">
+            {product.description}
+          </p>
 
+          {/* Feature Tags */}
 
-		</div>
+          <div className="flex flex-wrap gap-2 mt-5">
 
-	      </div>
+            <span className="bg-green-50 text-green-700 text-xs px-3 py-1 rounded-full">
+              🌵 Mudah Dirawat
+            </span>
 
-	    ))}
+            <span className="bg-green-50 text-green-700 text-xs px-3 py-1 rounded-full">
+              🎁 Cocok Hadiah
+            </span>
 
-	  </div>
+          </div>
 
-	</section>
+          {/* Price */}
+
+          <div className="mt-6">
+
+            <p className="text-sm text-gray-500">
+              Mulai dari
+            </p>
+
+            <p className="text-3xl font-bold text-[#6F8F72]">
+              {product.price}
+            </p>
+
+          </div>
+
+          {/* Button */}
+
+          <a
+            href={whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              mt-6
+              block
+              text-center
+              bg-[#6F8F72]
+              text-white
+              py-3
+              rounded-xl
+              font-medium
+              hover:opacity-90
+              transition
+            "
+          >
+            Pesan Sekarang
+          </a>
+
+        </div>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</section>
       
       <section className="max-w-6xl mx-auto px-4 py-24">
 
