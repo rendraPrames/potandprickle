@@ -4,179 +4,313 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
-  const products = [
-    {
-      name: "Kaktus Mini",
-      description: "Cocok untuk meja kerja dan ruangan minimalis.",
-      price: "Mulai Rp25.000",
-      image: "/product-1.jpeg",
-    },
-    {
-      name: "Sukulen Mini",
-      description: "Mudah dirawat dan cocok untuk pemula.",
-      price: "Mulai Rp30.000",
-      image: "/product-2.jpeg",
-    },
-    {
-      name: "Paket Kado Wisuda",
-      description: "Hadiah unik dengan kartu ucapan personal.",
-      price: "Mulai Rp75.000",
-      image: "/product-3.jpeg",
-    },
-  ];
+const products = [
+{
+name: "Kaktus Mini",
+description: "Cocok untuk meja kerja dan ruangan minimalis.",
+price: "Mulai Rp25.000",
+image: "/product-1.jpeg",
+},
+{
+name: "Sukulen Mini",
+description: "Mudah dirawat dan cocok untuk pemula.",
+price: "Mulai Rp30.000",
+image: "/product-2.jpeg",
+},
+{
+name: "Paket Kado Wisuda",
+description: "Hadiah unik dengan kartu ucapan personal.",
+price: "Mulai Rp75.000",
+image: "/product-3.jpeg",
+},
+];
 
-  const whatsapp = "https://wa.me/6285156023275";
-  const [recipient, setRecipient] = useState("Lyandra");
-  const [occasion, setOccasion] = useState("Wisuda");
-  const [message, setMessage] = useState(
-  "Selamat Wisuda 🎓"
-  );
+const whatsapp = "https://wa.me/6285156023275";
+const [recipient, setRecipient] = useState("Lyandra");
+const [occasion, setOccasion] = useState("Wisuda");
+const [message, setMessage] = useState(
+"Selamat Wisuda 🎓"
+);
 
-  return (
-    <main className="min-h-screen bg-[#F7F4ED] text-[#2F2F2F]">
+return (
+<main className="min-h-screen bg-[#F7F4ED] text-[#2F2F2F]">
 
-      {/* Navbar */}
-      <nav className="sticky top-0 z-50 bg-[#F7F4ED]/90 backdrop-blur-md border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+  {/* Navbar */}
+  <nav className="sticky top-0 z-50 bg-[#F7F4ED]/90 backdrop-blur-md border-b border-gray-200">
+    <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
 
-          <div className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="PotAndPrickle"
-              width={80}
-              height={80}
-              className="w-12 h-12 md:w-16 md:h-16"
-            />
+      <div className="flex items-center gap-3">
+        <Image src="/logo.png" alt="PotAndPrickle" width={80} height={80} className="w-12 h-12 md:w-16 md:h-16" />
 
-            <div>
-              <h1 className="font-bold text-lg md:text-xl">
-                PotAndPrickle
-              </h1>
+        <div>
+          <h1 className="font-bold text-lg md:text-xl">
+            PotAndPrickle
+          </h1>
 
-              <p className="text-xs text-gray-500">
-                Hadiah yang terus tumbuh
-              </p>
-            </div>
-          </div>
+          <p className="text-xs text-gray-500">
+            Hadiah yang terus tumbuh
+          </p>
+        </div>
+      </div>
 
-          <a
-            href={whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#6F8F72] text-white px-4 py-2 md:px-5 md:py-3 rounded-xl text-sm md:text-base hover:opacity-90 transition"
-          >
-            WhatsApp
+      <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="bg-[#6F8F72] text-white px-4 py-2 md:px-5 md:py-3 rounded-xl text-sm md:text-base hover:opacity-90 transition">
+        WhatsApp
+      </a>
+
+    </div>
+  </nav>
+
+  {/* Hero */}
+  <section className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-20">
+
+    <div className="flex flex-wrap gap-3 mt-6">
+
+      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
+        🎁 Custom Card Gratis
+      </span>
+
+      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
+        🌵 Mudah Dirawat
+      </span>
+
+      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
+        📦 Packing Aman
+      </span>
+
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-10 items-center">
+
+      <div className="order-1 md:order-2">
+        <Image src="/hero-cactus.jpg" alt="PotAndPrickle" width={1000} height={700} className="w-full rounded-3xl shadow-xl object-cover" />
+      </div>
+
+      <div className="order-2 md:order-1">
+
+        <span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+          🌵 Tanaman Hias & Kado Unik
+        </span>
+
+        <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+          Hadiah yang
+          <br />
+          Terus Tumbuh 🌵
+        </h1>
+
+        <p className="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
+          Kaktus dan sukulen dengan kartu ucapan personal
+          untuk wisuda, ulang tahun, pernikahan,
+          dan momen spesial lainnya.
+        </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+
+          <a href="#koleksi" className="bg-[#6F8F72] text-white px-6 py-3 rounded-xl text-center">
+            Lihat Koleksi
+          </a>
+
+          <a href="#card-generator" className="border border-[#6F8F72] px-6 py-3 rounded-xl text-center">
+            Custom Card
           </a>
 
         </div>
-      </nav>
 
+      </div>
 
-      {/* Hero */}
-      <section className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-20">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+    </div>
+  </section>
 
-          <div className="order-1 md:order-2">
-            <Image
-              src="/hero-cactus.jpg"
-              alt="PotAndPrickle"
-              width={1000}
-              height={700}
-              className="w-full rounded-3xl shadow-xl object-cover"
+  {/* Benefit */}
+  <section className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-12">
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+      {[
+      {
+      icon: "🌱",
+      title: "Mudah Dirawat",
+      desc: "Cocok untuk pemula dan orang yang sibuk.",
+      },
+      {
+      icon: "🎁",
+      title: "Cocok untuk Hadiah",
+      desc: "Lebih berkesan dan tahan lama dibanding bunga.",
+      },
+      {
+      icon: "📦",
+      title: "Packing Aman",
+      desc: "Dikemas dengan perlindungan ekstra.",
+      },
+      ].map((item) => (
+      <div key={item.title} className="bg-white rounded-2xl p-6 shadow-sm">
+        <div className="text-2xl mb-3">
+          {item.icon}
+        </div>
+
+        <h3 className="font-semibold text-lg">
+          {item.title}
+        </h3>
+
+        <p className="text-gray-600 mt-2">
+          {item.desc}
+        </p>
+
+      </div>
+      ))}
+
+    </div>
+
+  </section>
+
+  <section id="card-generator" className="max-w-6xl mx-auto px-4 py-24">
+
+    <div className="text-center mb-12">
+
+      <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm">
+        GRATIS CUSTOM CARD
+      </span>
+
+      <h2 className="text-4xl font-bold mt-4">
+        Buat Kartu Ucapan Anda
+      </h2>
+
+      <p className="text-gray-600 mt-4">
+        Coba isi nama dan pesan untuk melihat hasilnya.
+      </p>
+
+    </div>
+
+    <div className="grid lg:grid-cols-2 gap-10 items-start">
+
+      {/* Form */}
+
+      <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+        <div className="space-y-5">
+
+          <div>
+
+            <label className="block font-medium mb-2">
+              Nama Penerima
+            </label>
+
+            <input type="text" value={recipient} onChange={(e)=>
+            setRecipient(e.target.value)
+            }
+            className="w-full border rounded-xl px-4 py-3"
             />
-          </div>
-
-
-          <div className="order-2 md:order-1">
-
-            <span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
-              🌵 Tanaman Hias & Kado Unik
-            </span>
-
-
-            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-              Tanaman Kecil,
-              <br />
-              Kesan yang Besar
-            </h1>
-
-
-            <p className="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
-              Kaktus dan sukulen pilihan yang cocok untuk hadiah,
-              dekorasi meja kerja, maupun momen spesial yang ingin
-              dikenang lebih lama.
-            </p>
-
-
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-
-              <a
-                href="#koleksi"
-                className="bg-[#6F8F72] text-white px-6 py-3 rounded-xl text-center"
-              >
-                Lihat Koleksi
-              </a>
-
-
-              <a
-                href="#tentang"
-                className="border border-[#6F8F72] px-6 py-3 rounded-xl text-center"
-              >
-                Tentang Kami
-              </a>
-
-            </div>
 
           </div>
 
-        </div>
-      </section>
+          <div>
 
+            <label className="block font-medium mb-2">
+              Jenis Momen
+            </label>
 
-      {/* Benefit */}
-      <section className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-12">
+            <select value={occasion} onChange={(e)=>
+              setOccasion(e.target.value)
+              }
+              className="w-full border rounded-xl px-4 py-3"
+              >
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <option>Wisuda</option>
+              <option>Ulang Tahun</option>
+              <option>Pernikahan</option>
+              <option>New Journey</option>
+              <option>Terima Kasih</option>
 
-          {[
-            {
-              icon: "🌱",
-              title: "Mudah Dirawat",
-              desc: "Cocok untuk pemula dan orang yang sibuk.",
-            },
-            {
-              icon: "🎁",
-              title: "Cocok untuk Hadiah",
-              desc: "Lebih berkesan dan tahan lama dibanding bunga.",
-            },
-            {
-              icon: "📦",
-              title: "Packing Aman",
-              desc: "Dikemas dengan perlindungan ekstra.",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="bg-white rounded-2xl p-6 shadow-sm"
-            >
-              <div className="text-2xl mb-3">
-                {item.icon}
-              </div>
+            </select>
 
-              <h3 className="font-semibold text-lg">
-                {item.title}
-              </h3>
+          </div>
 
-              <p className="text-gray-600 mt-2">
-                {item.desc}
-              </p>
+          <div>
 
-            </div>
-          ))}
+            <label className="block font-medium mb-2">
+              Pesan
+            </label>
 
-        </div>
+            <textarea rows={4} value={message} onChange={(e)=>
+		      setMessage(e.target.value)
+		    }
+		    className="w-full border rounded-xl px-4 py-3"
+		  />
 
-      </section>
+		</div>
+
+	      </div>
+
+	    </div>
+
+	    {/* Preview */}
+
+	    <div className="flex justify-center">
+
+	      <div
+		className="
+		  bg-white
+		  rounded-3xl
+		  shadow-xl
+		  p-8
+		  w-full
+		  max-w-md
+		"
+	      >
+
+		<div className="border-2 border-dashed border-[#6F8F72] rounded-2xl p-8 text-center">
+
+		  <p className="uppercase text-sm tracking-widest text-gray-500">
+		    {occasion}
+		  </p>
+
+		  <h3 className="text-3xl font-bold mt-4">
+		    {recipient}
+		  </h3>
+
+		  <div className="w-16 h-[2px] bg-[#6F8F72] mx-auto my-6" />
+
+		  <p className="text-lg leading-relaxed">
+		    {message}
+		  </p>
+
+		  <p className="mt-8 text-sm text-gray-500">
+		    🌵 PotAndPrickle
+		  </p>
+
+		</div>
+
+	      </div>
+
+	    </div>
+	    
+	    		<a
+		  href={`https://wa.me/6285156023275?text=${encodeURIComponent(
+		    `Halo PotAndPrickle,
+
+		Saya ingin memesan:
+
+		Nama Penerima: ${recipient}
+		Momen: ${occasion}
+		Pesan: ${message}`
+		  )}`}
+		  target="_blank"
+		  rel="noopener noreferrer"
+		  className="
+		    mt-6
+		    block
+		    text-center
+		    bg-[#6F8F72]
+		    text-white
+		    py-3
+		    rounded-xl
+		  "
+		>
+		  Pesan Dengan Card Ini
+		</a>
+
+	  </div>
+
+	</section>
 
 
 	{/* Produk */}
@@ -295,28 +429,8 @@ export default function Home() {
 	  </div>
 
 	</section>
-
-
-      {/* Tentang */}
-      <section
-        id="tentang"
-        className="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-20 text-center"
-      >
-
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">
-          Tentang PotAndPrickle
-        </h2>
-
-
-        <p className="text-base md:text-lg text-gray-600 leading-8">
-          Kami percaya hadiah terbaik bukan hanya indah saat
-          diterima, tetapi juga terus tumbuh dan menjadi bagian
-          dari keseharian penerimanya.
-        </p>
-
-      </section>
       
-	      <section className="max-w-6xl mx-auto px-4 py-24">
+      <section className="max-w-6xl mx-auto px-4 py-24">
 
 	  <div className="text-center mb-14">
 	    <p className="text-[#6F8F72] font-medium">
@@ -364,164 +478,6 @@ export default function Home() {
 		</p>
 	      </div>
 	    ))}
-	  </div>
-
-	</section>
-	
-	<section className="max-w-6xl mx-auto px-4 py-24">
-
-	  <div className="text-center mb-12">
-
-	    <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm">
-	      GRATIS CUSTOM CARD
-	    </span>
-
-	    <h2 className="text-4xl font-bold mt-4">
-	      Buat Kartu Ucapan Anda
-	    </h2>
-
-	    <p className="text-gray-600 mt-4">
-	      Coba isi nama dan pesan untuk melihat hasilnya.
-	    </p>
-
-	  </div>
-
-	  <div className="grid lg:grid-cols-2 gap-10 items-start">
-
-	    {/* Form */}
-
-	    <div className="bg-white rounded-3xl p-8 shadow-sm">
-
-	      <div className="space-y-5">
-
-		<div>
-
-		  <label className="block font-medium mb-2">
-		    Nama Penerima
-		  </label>
-
-		  <input
-		    type="text"
-		    value={recipient}
-		    onChange={(e) =>
-		      setRecipient(e.target.value)
-		    }
-		    className="w-full border rounded-xl px-4 py-3"
-		  />
-
-		</div>
-
-		<div>
-
-		  <label className="block font-medium mb-2">
-		    Jenis Momen
-		  </label>
-
-		  <select
-		    value={occasion}
-		    onChange={(e) =>
-		      setOccasion(e.target.value)
-		    }
-		    className="w-full border rounded-xl px-4 py-3"
-		  >
-
-		    <option>Wisuda</option>
-		    <option>Ulang Tahun</option>
-		    <option>Pernikahan</option>
-		    <option>New Journey</option>
-		    <option>Terima Kasih</option>
-
-		  </select>
-
-		</div>
-
-		<div>
-
-		  <label className="block font-medium mb-2">
-		    Pesan
-		  </label>
-
-		  <textarea
-		    rows={4}
-		    value={message}
-		    onChange={(e) =>
-		      setMessage(e.target.value)
-		    }
-		    className="w-full border rounded-xl px-4 py-3"
-		  />
-
-		</div>
-
-	      </div>
-
-	    </div>
-
-	    {/* Preview */}
-
-	    <div className="flex justify-center">
-
-	      <div
-		className="
-		  bg-white
-		  rounded-3xl
-		  shadow-xl
-		  p-8
-		  w-full
-		  max-w-md
-		"
-	      >
-
-		<div className="border-2 border-dashed border-[#6F8F72] rounded-2xl p-8 text-center">
-
-		  <p className="uppercase text-sm tracking-widest text-gray-500">
-		    {occasion}
-		  </p>
-
-		  <h3 className="text-3xl font-bold mt-4">
-		    {recipient}
-		  </h3>
-
-		  <div className="w-16 h-[2px] bg-[#6F8F72] mx-auto my-6" />
-
-		  <p className="text-lg leading-relaxed">
-		    {message}
-		  </p>
-
-		  <p className="mt-8 text-sm text-gray-500">
-		    🌵 PotAndPrickle
-		  </p>
-
-		</div>
-
-	      </div>
-
-	    </div>
-	    
-	    		<a
-		  href={`https://wa.me/6285156023275?text=${encodeURIComponent(
-		    `Halo PotAndPrickle,
-
-		Saya ingin memesan:
-
-		Nama Penerima: ${recipient}
-		Momen: ${occasion}
-		Pesan: ${message}`
-		  )}`}
-		  target="_blank"
-		  rel="noopener noreferrer"
-		  className="
-		    mt-6
-		    block
-		    text-center
-		    bg-[#6F8F72]
-		    text-white
-		    py-3
-		    rounded-xl
-		  "
-		>
-		  Pesan Dengan Card Ini
-		</a>
-
 	  </div>
 
 	</section>
@@ -739,55 +695,45 @@ export default function Home() {
 
 	      </div>
 
-	      <div
-		className="
-		  mt-10
-		  grid
-		  grid-cols-3
-		  gap-6
-		  max-w-xl
-		  mx-auto
-		"
-	      >
+	      <div className="mt-10 grid grid-cols-3 gap-6 max-w-xl mx-auto">
 
-		<div>
-		  <div className="font-bold text-2xl">
-		    100+
+		  <div>
+		    <div className="text-2xl">
+		      🎁
+		    </div>
+
+		    <p className="text-sm mt-2">
+		      Custom Card
+		    </p>
 		  </div>
 
-		  <p className="text-sm opacity-80">
-		    Pelanggan
-		  </p>
-		</div>
+		  <div>
+		    <div className="text-2xl">
+		      🌵
+		    </div>
 
-		<div>
-		  <div className="font-bold text-2xl">
-		    20+
+		    <p className="text-sm mt-2">
+		      Mudah Dirawat
+		    </p>
 		  </div>
 
-		  <p className="text-sm opacity-80">
-		    Varian
-		  </p>
-		</div>
+		  <div>
+		    <div className="text-2xl">
+		      📦
+		    </div>
 
-		<div>
-		  <div className="font-bold text-2xl">
-		    100%
+		    <p className="text-sm mt-2">
+		      Packing Aman
+		    </p>
 		  </div>
 
-		  <p className="text-sm opacity-80">
-		    Custom Card
-		  </p>
 		</div>
-
-	      </div>
 
 	    </div>
 
 	  </div>
 
 	</section>
-
 
 	<footer className="border-t border-gray-200">
 
@@ -822,11 +768,7 @@ export default function Home() {
 	      <a href="#koleksi">
 		Koleksi
 	      </a>
-
-	      <a href="#tentang">
-		Tentang
-	      </a>
-
+	      
 	      <a href={whatsapp}>
 		WhatsApp
 	      </a>
@@ -840,6 +782,28 @@ export default function Home() {
 	  </div>
 
 	</footer>
+
+	<a
+	  href={whatsapp}
+	  target="_blank"
+	  rel="noopener noreferrer"
+	  className="
+	    fixed
+	    bottom-5
+	    right-5
+	    z-50
+	    bg-[#25D366]
+	    text-white
+	    px-5
+	    py-4
+	    rounded-full
+	    shadow-xl
+	    hover:scale-105
+	    transition
+	  "
+	>
+	  💬 Chat
+	</a>
 
     </main>
   );
