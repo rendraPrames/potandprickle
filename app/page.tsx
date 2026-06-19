@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
   const products = [
@@ -23,6 +26,11 @@ export default function Home() {
   ];
 
   const whatsapp = "https://wa.me/6285156023275";
+  const [recipient, setRecipient] = useState("Lyandra");
+  const [occasion, setOccasion] = useState("Wisuda");
+  const [message, setMessage] = useState(
+  "Selamat Wisuda 🎓"
+  );
 
   return (
     <main className="min-h-screen bg-[#F7F4ED] text-[#2F2F2F]">
@@ -360,126 +368,256 @@ export default function Home() {
 
 	</section>
 	
-	<section className="max-w-6xl mx-auto px-4 py-20">
+	<section className="max-w-6xl mx-auto px-4 py-24">
 
-	  <h2 className="text-3xl font-bold text-center mb-4">
-	    Custom Plant Card
-	  </h2>
+	  <div className="text-center mb-12">
 
-	  <p className="text-center text-gray-600 mb-12">
-	    Tambahkan pesan personal untuk orang tersayang.
-	  </p>
+	    <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm">
+	      GRATIS CUSTOM CARD
+	    </span>
 
-	  <div className="grid md:grid-cols-3 gap-6">
+	    <h2 className="text-4xl font-bold mt-4">
+	      Buat Kartu Ucapan Anda
+	    </h2>
 
-	    <div className="bg-white rounded-2xl p-6 text-center">
-	      <h3 className="font-semibold mb-4">
-		Wisuda
-	      </h3>
+	    <p className="text-gray-600 mt-4">
+	      Coba isi nama dan pesan untuk melihat hasilnya.
+	    </p>
 
-	      <div className="border rounded-xl p-4">
-		<p>Untuk:</p>
-		<p className="font-bold">
-		  Lyandra
-		</p>
+	  </div>
 
-		<p className="mt-4">
-		  Selamat Wisuda 🎓
-		</p>
+	  <div className="grid lg:grid-cols-2 gap-10 items-start">
 
-		<p className="mt-2 text-sm">
-		  Small Plant, Big Future.
-		</p>
+	    {/* Form */}
+
+	    <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+	      <div className="space-y-5">
+
+		<div>
+
+		  <label className="block font-medium mb-2">
+		    Nama Penerima
+		  </label>
+
+		  <input
+		    type="text"
+		    value={recipient}
+		    onChange={(e) =>
+		      setRecipient(e.target.value)
+		    }
+		    className="w-full border rounded-xl px-4 py-3"
+		  />
+
+		</div>
+
+		<div>
+
+		  <label className="block font-medium mb-2">
+		    Jenis Momen
+		  </label>
+
+		  <select
+		    value={occasion}
+		    onChange={(e) =>
+		      setOccasion(e.target.value)
+		    }
+		    className="w-full border rounded-xl px-4 py-3"
+		  >
+
+		    <option>Wisuda</option>
+		    <option>Ulang Tahun</option>
+		    <option>Pernikahan</option>
+		    <option>New Journey</option>
+		    <option>Terima Kasih</option>
+
+		  </select>
+
+		</div>
+
+		<div>
+
+		  <label className="block font-medium mb-2">
+		    Pesan
+		  </label>
+
+		  <textarea
+		    rows={4}
+		    value={message}
+		    onChange={(e) =>
+		      setMessage(e.target.value)
+		    }
+		    className="w-full border rounded-xl px-4 py-3"
+		  />
+
+		</div>
+
 	      </div>
+
 	    </div>
 
-	    <div className="bg-white rounded-2xl p-6 text-center">
-	      <h3 className="font-semibold mb-4">
-		Ulang Tahun
-	      </h3>
+	    {/* Preview */}
 
-	      <div className="border rounded-xl p-4">
-		<p>Untuk:</p>
+	    <div className="flex justify-center">
 
-		<p className="font-bold">
-		  Claudia
-		</p>
+	      <div
+		className="
+		  bg-white
+		  rounded-3xl
+		  shadow-xl
+		  p-8
+		  w-full
+		  max-w-md
+		"
+	      >
 
-		<p className="mt-4">
-		  Happy Birthday 🎉
-		</p>
+		<div className="border-2 border-dashed border-[#6F8F72] rounded-2xl p-8 text-center">
 
-		<p className="mt-2 text-sm">
-		  Keep Growing.
-		</p>
+		  <p className="uppercase text-sm tracking-widest text-gray-500">
+		    {occasion}
+		  </p>
+
+		  <h3 className="text-3xl font-bold mt-4">
+		    {recipient}
+		  </h3>
+
+		  <div className="w-16 h-[2px] bg-[#6F8F72] mx-auto my-6" />
+
+		  <p className="text-lg leading-relaxed">
+		    {message}
+		  </p>
+
+		  <p className="mt-8 text-sm text-gray-500">
+		    🌵 PotAndPrickle
+		  </p>
+
+		</div>
+
 	      </div>
+
 	    </div>
+	    
+	    		<a
+		  href={`https://wa.me/6285156023275?text=${encodeURIComponent(
+		    `Halo PotAndPrickle,
 
-	    <div className="bg-white rounded-2xl p-6 text-center">
-	      <h3 className="font-semibold mb-4">
-		New Journey
-	      </h3>
+		Saya ingin memesan:
 
-	      <div className="border rounded-xl p-4">
-		<p>Untuk:</p>
-
-		<p className="font-bold">
-		  Prames
-		</p>
-
-		<p className="mt-4">
-		  Good Luck 🍀
-		</p>
-
-		<p className="mt-2 text-sm">
-		  New Chapter Begins.
-		</p>
-	      </div>
-	    </div>
+		Nama Penerima: ${recipient}
+		Momen: ${occasion}
+		Pesan: ${message}`
+		  )}`}
+		  target="_blank"
+		  rel="noopener noreferrer"
+		  className="
+		    mt-6
+		    block
+		    text-center
+		    bg-[#6F8F72]
+		    text-white
+		    py-3
+		    rounded-xl
+		  "
+		>
+		  Pesan Dengan Card Ini
+		</a>
 
 	  </div>
 
 	</section>
 	
-	<section className="max-w-6xl mx-auto px-4 py-20">
+	{/* Care Guide */}
+	<section className="py-24 bg-[#F7F4ED]">
 
 	  <div className="max-w-6xl mx-auto px-4">
 
-	    <h2 className="text-4xl font-bold text-center mb-14">
-	      Panduan Perawatan
-	    </h2>
+	    <div className="text-center mb-16">
+
+	      <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm">
+		🌵 Perawatan Mudah
+	      </span>
+
+	      <h2 className="mt-5 text-3xl md:text-5xl font-bold">
+		Mudah Dirawat untuk Siapa Saja
+	      </h2>
+
+	      <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+		Bahkan jika penerima belum pernah merawat tanaman sebelumnya.
+		Kaktus dan sukulen hanya membutuhkan sedikit perhatian.
+	      </p>
+
+	    </div>
+
 
 	    <div className="grid md:grid-cols-3 gap-8">
 
-	      <div className="bg-[#F7F4ED] p-8 rounded-3xl">
-		<div className="text-4xl">☀️</div>
-		<h3 className="font-semibold mt-4">
-		  Cahaya
+	      <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+		<div className="text-5xl mb-5">
+		  ☀️
+		</div>
+
+		<h3 className="font-bold text-xl mb-3">
+		  Suka Cahaya Terang
 		</h3>
-		<p className="mt-3 text-gray-600">
-		  Simpan di tempat terang dengan sinar matahari tidak langsung.
+
+		<p className="text-gray-600 leading-relaxed">
+		  Letakkan dekat jendela atau area yang terang.
+		  Tidak perlu perawatan khusus setiap hari.
 		</p>
+
 	      </div>
 
-	      <div className="bg-[#F7F4ED] p-8 rounded-3xl">
-		<div className="text-4xl">💧</div>
-		<h3 className="font-semibold mt-4">
-		  Penyiraman
+
+	      <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+		<div className="text-5xl mb-5">
+		  💧
+		</div>
+
+		<h3 className="font-bold text-xl mb-3">
+		  Siram Seminggu Sekali
 		</h3>
-		<p className="mt-3 text-gray-600">
-		  Siram ketika media benar-benar kering.
+
+		<p className="text-gray-600 leading-relaxed">
+		  Cukup disiram saat media benar-benar kering.
+		  Cocok untuk orang yang sibuk bekerja.
 		</p>
+
 	      </div>
 
-	      <div className="bg-[#F7F4ED] p-8 rounded-3xl">
-		<div className="text-4xl">🌱</div>
-		<h3 className="font-semibold mt-4">
-		  Media Tanam
+
+	      <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+		<div className="text-5xl mb-5">
+		  🌱
+		</div>
+
+		<h3 className="font-bold text-xl mb-3">
+		  Awet Bertahun-Tahun
 		</h3>
-		<p className="mt-3 text-gray-600">
-		  Gunakan media porous dengan drainase baik.
+
+		<p className="text-gray-600 leading-relaxed">
+		  Dengan perawatan sederhana, tanaman bisa tumbuh
+		  dan menjadi kenang-kenangan yang bertahan lama.
 		</p>
+
 	      </div>
+
+	    </div>
+
+
+	    <div className="mt-16 bg-gradient-to-r from-[#6F8F72] to-[#88A488] rounded-3xl p-8 md:p-12 text-center text-white">
+
+	      <h3 className="text-2xl md:text-3xl font-bold">
+		🎁 Hadiah yang Tidak Layu Setelah Seminggu
+	      </h3>
+
+	      <p className="mt-4 max-w-2xl mx-auto opacity-90">
+		Berbeda dengan bunga potong, kaktus dan sukulen dapat
+		terus tumbuh selama bertahun-tahun sebagai pengingat
+		momen spesial yang pernah diberikan.
+	      </p>
 
 	    </div>
 
@@ -488,38 +626,220 @@ export default function Home() {
 	</section>
 
       {/* CTA */}
-      <section className="max-w-5xl mx-auto px-4 md:px-6 pb-16 md:pb-20">
+      <section className="max-w-6xl mx-auto px-4 pb-20">
 
-        <div className="bg-[#6F8F72] text-white rounded-3xl p-6 md:p-12 text-center">
+	  <div
+	    className="
+	      relative
+	      overflow-hidden
+	      rounded-[32px]
+	      bg-[#6F8F72]
+	      p-8 md:p-16
+	      text-white
+	    "
+	  >
 
-          <h2 className="text-2xl md:text-4xl font-bold">
-            Siap Memberikan Hadiah yang Berbeda?
-          </h2>
+	    {/* Background Decoration */}
+
+	    <div className="absolute -right-10 -top-10 text-[180px] opacity-10">
+	      🌵
+	    </div>
+
+	    <div className="absolute -left-10 -bottom-10 text-[180px] opacity-10">
+	      🎁
+	    </div>
+
+	    <div className="relative z-10 text-center">
+
+	      <span
+		className="
+		  inline-block
+		  bg-white/20
+		  px-4
+		  py-2
+		  rounded-full
+		  text-sm
+		"
+	      >
+		🌱 Hadiah Unik & Berkesan
+	      </span>
+
+	      <h2
+		className="
+		  mt-6
+		  text-3xl
+		  md:text-5xl
+		  font-bold
+		  leading-tight
+		"
+	      >
+		Berikan Hadiah yang
+		<br />
+		Terus Tumbuh
+	      </h2>
+
+	      <p
+		className="
+		  max-w-2xl
+		  mx-auto
+		  mt-6
+		  text-white/90
+		  text-base
+		  md:text-lg
+		"
+	      >
+		Cocok untuk wisuda, ulang tahun,
+		anniversary, maupun hadiah untuk
+		rekan kerja dan orang tersayang.
+	      </p>
+
+	      <div
+		className="
+		  mt-10
+		  flex
+		  flex-col
+		  sm:flex-row
+		  gap-4
+		  justify-center
+		"
+	      >
+
+		<a
+		  href={whatsapp}
+		  target="_blank"
+		  rel="noopener noreferrer"
+		  className="
+		    bg-white
+		    text-[#6F8F72]
+		    font-semibold
+		    px-8
+		    py-4
+		    rounded-xl
+		    hover:scale-105
+		    transition
+		  "
+		>
+		  Pesan via WhatsApp
+		</a>
+
+		<a
+		  href="#koleksi"
+		  className="
+		    border
+		    border-white
+		    px-8
+		    py-4
+		    rounded-xl
+		    hover:bg-white/10
+		    transition
+		  "
+		>
+		  Lihat Koleksi
+		</a>
+
+	      </div>
+
+	      <div
+		className="
+		  mt-10
+		  grid
+		  grid-cols-3
+		  gap-6
+		  max-w-xl
+		  mx-auto
+		"
+	      >
+
+		<div>
+		  <div className="font-bold text-2xl">
+		    100+
+		  </div>
+
+		  <p className="text-sm opacity-80">
+		    Pelanggan
+		  </p>
+		</div>
+
+		<div>
+		  <div className="font-bold text-2xl">
+		    20+
+		  </div>
+
+		  <p className="text-sm opacity-80">
+		    Varian
+		  </p>
+		</div>
+
+		<div>
+		  <div className="font-bold text-2xl">
+		    100%
+		  </div>
+
+		  <p className="text-sm opacity-80">
+		    Custom Card
+		  </p>
+		</div>
+
+	      </div>
+
+	    </div>
+
+	  </div>
+
+	</section>
 
 
-          <p className="mt-4 opacity-90 max-w-2xl mx-auto">
-            Temukan tanaman yang cocok untuk hadiah,
-            dekorasi ruangan, maupun meja kerja Anda.
-          </p>
+	<footer className="border-t border-gray-200">
 
+	  <div
+	    className="
+	      max-w-6xl
+	      mx-auto
+	      px-4
+	      py-10
+	      text-center
+	    "
+	  >
 
-          <a
-            href={whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-8 bg-white text-[#6F8F72] font-semibold px-6 py-3 rounded-xl"
-          >
-            Chat WhatsApp
-          </a>
+	    <Image
+	      src="/logo.png"
+	      alt="PotAndPrickle"
+	      width={70}
+	      height={70}
+	      className="mx-auto"
+	    />
 
-        </div>
+	    <h3 className="font-bold mt-4">
+	      PotAndPrickle
+	    </h3>
 
-      </section>
+	    <p className="text-gray-500 mt-2">
+	      Tanaman kecil untuk momen yang besar.
+	    </p>
 
+	    <div className="mt-6 flex justify-center gap-6 text-sm">
 
-      <footer className="border-t border-gray-200 py-8 text-center text-gray-500 text-sm">
-        © 2026 PotAndPrickle. Tanaman kecil untuk momen yang besar.
-      </footer>
+	      <a href="#koleksi">
+		Koleksi
+	      </a>
+
+	      <a href="#tentang">
+		Tentang
+	      </a>
+
+	      <a href={whatsapp}>
+		WhatsApp
+	      </a>
+
+	    </div>
+
+	    <p className="text-xs text-gray-400 mt-8">
+	      © 2026 PotAndPrickle. All Rights Reserved.
+	    </p>
+
+	  </div>
+
+	</footer>
 
     </main>
   );
