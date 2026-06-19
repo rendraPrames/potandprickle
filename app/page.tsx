@@ -62,27 +62,24 @@ return (
 
   {/* Hero */}
   <section className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-20">
-
-    <div className="flex flex-wrap gap-3 mt-6">
-
-      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
-        🎁 Custom Card Gratis
-      </span>
-
-      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
-        🌵 Mudah Dirawat
-      </span>
-
-      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
-        📦 Packing Aman
-      </span>
-
-    </div>
-
+  
     <div className="grid md:grid-cols-2 gap-10 items-center">
 
       <div className="order-1 md:order-2">
-        <Image src="/hero-cactus.jpg" alt="PotAndPrickle" width={1000} height={700} className="w-full rounded-3xl shadow-xl object-cover" />
+	<Image
+	  src="/hero-cactus.jpg"
+	  alt="PotAndPrickle"
+	  width={1000}
+	  height={700}
+	  className="
+	    w-full
+	    h-[320px]
+	    md:h-auto
+	    object-cover
+	    rounded-3xl
+	    shadow-xl
+	  "
+	/>
       </div>
 
       <div className="order-2 md:order-1">
@@ -114,6 +111,22 @@ return (
           </a>
 
         </div>
+        
+            <div className="flex flex-wrap gap-3 mt-6">
+
+	      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
+		🎁 Custom Card Gratis
+	      </span>
+
+	      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
+		🌵 Mudah Dirawat
+	      </span>
+
+	      <span className="bg-white px-4 py-2 rounded-full text-sm shadow-sm">
+		📦 Packing Aman
+	      </span>
+
+	    </div>
 
       </div>
 
