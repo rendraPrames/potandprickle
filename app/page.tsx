@@ -171,7 +171,7 @@ export default function Home() {
       </section>
 
 
-	      {/* Produk */}
+	{/* Produk */}
 	<section
 	  id="koleksi"
 	  className="max-w-6xl mx-auto px-4 md:px-6 pt-16 md:pt-20 pb-24 md:pb-32"
@@ -307,7 +307,185 @@ export default function Home() {
         </p>
 
       </section>
+      
+	      <section className="max-w-6xl mx-auto px-4 py-24">
 
+	  <div className="text-center mb-14">
+	    <p className="text-[#6F8F72] font-medium">
+	      MUDAH & CEPAT
+	    </p>
+
+	    <h2 className="text-4xl font-bold mt-2">
+	      Cara Pemesanan
+	    </h2>
+	  </div>
+
+	  <div className="grid md:grid-cols-3 gap-8">
+
+	    {[
+	      {
+		number: "01",
+		title: "Pilih Produk",
+		desc: "Pilih tanaman atau paket hadiah yang Anda sukai."
+	      },
+	      {
+		number: "02",
+		title: "Custom Ucapan",
+		desc: "Tambahkan nama penerima dan pesan spesial."
+	      },
+	      {
+		number: "03",
+		title: "Kami Kirim",
+		desc: "Hadiah dikemas rapi dan dikirim ke tujuan."
+	      }
+	    ].map((item) => (
+	      <div
+		key={item.number}
+		className="bg-white rounded-3xl p-8 shadow-sm"
+	      >
+		<span className="text-5xl font-bold text-[#C7D8C6]">
+		  {item.number}
+		</span>
+
+		<h3 className="text-xl font-semibold mt-4">
+		  {item.title}
+		</h3>
+
+		<p className="text-gray-600 mt-3">
+		  {item.desc}
+		</p>
+	      </div>
+	    ))}
+	  </div>
+
+	</section>
+	
+	<section className="max-w-6xl mx-auto px-4 py-20">
+
+	  <h2 className="text-3xl font-bold text-center mb-4">
+	    Custom Plant Card
+	  </h2>
+
+	  <p className="text-center text-gray-600 mb-12">
+	    Tambahkan pesan personal untuk orang tersayang.
+	  </p>
+
+	  <div className="grid md:grid-cols-3 gap-6">
+
+	    <div className="bg-white rounded-2xl p-6 text-center">
+	      <h3 className="font-semibold mb-4">
+		Wisuda
+	      </h3>
+
+	      <div className="border rounded-xl p-4">
+		<p>Untuk:</p>
+		<p className="font-bold">
+		  Lyandra
+		</p>
+
+		<p className="mt-4">
+		  Selamat Wisuda 🎓
+		</p>
+
+		<p className="mt-2 text-sm">
+		  Small Plant, Big Future.
+		</p>
+	      </div>
+	    </div>
+
+	    <div className="bg-white rounded-2xl p-6 text-center">
+	      <h3 className="font-semibold mb-4">
+		Ulang Tahun
+	      </h3>
+
+	      <div className="border rounded-xl p-4">
+		<p>Untuk:</p>
+
+		<p className="font-bold">
+		  Claudia
+		</p>
+
+		<p className="mt-4">
+		  Happy Birthday 🎉
+		</p>
+
+		<p className="mt-2 text-sm">
+		  Keep Growing.
+		</p>
+	      </div>
+	    </div>
+
+	    <div className="bg-white rounded-2xl p-6 text-center">
+	      <h3 className="font-semibold mb-4">
+		New Journey
+	      </h3>
+
+	      <div className="border rounded-xl p-4">
+		<p>Untuk:</p>
+
+		<p className="font-bold">
+		  Prames
+		</p>
+
+		<p className="mt-4">
+		  Good Luck 🍀
+		</p>
+
+		<p className="mt-2 text-sm">
+		  New Chapter Begins.
+		</p>
+	      </div>
+	    </div>
+
+	  </div>
+
+	</section>
+	
+	<section className="max-w-6xl mx-auto px-4 py-20">
+
+	  <div className="max-w-6xl mx-auto px-4">
+
+	    <h2 className="text-4xl font-bold text-center mb-14">
+	      Panduan Perawatan
+	    </h2>
+
+	    <div className="grid md:grid-cols-3 gap-8">
+
+	      <div className="bg-[#F7F4ED] p-8 rounded-3xl">
+		<div className="text-4xl">☀️</div>
+		<h3 className="font-semibold mt-4">
+		  Cahaya
+		</h3>
+		<p className="mt-3 text-gray-600">
+		  Simpan di tempat terang dengan sinar matahari tidak langsung.
+		</p>
+	      </div>
+
+	      <div className="bg-[#F7F4ED] p-8 rounded-3xl">
+		<div className="text-4xl">💧</div>
+		<h3 className="font-semibold mt-4">
+		  Penyiraman
+		</h3>
+		<p className="mt-3 text-gray-600">
+		  Siram ketika media benar-benar kering.
+		</p>
+	      </div>
+
+	      <div className="bg-[#F7F4ED] p-8 rounded-3xl">
+		<div className="text-4xl">🌱</div>
+		<h3 className="font-semibold mt-4">
+		  Media Tanam
+		</h3>
+		<p className="mt-3 text-gray-600">
+		  Gunakan media porous dengan drainase baik.
+		</p>
+	      </div>
+
+	    </div>
+
+	  </div>
+
+	</section>
 
       {/* CTA */}
       <section className="max-w-5xl mx-auto px-4 md:px-6 pb-16 md:pb-20">
